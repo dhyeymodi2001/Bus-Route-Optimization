@@ -1,0 +1,54 @@
+/* Home.css */
+.h-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 20px;
+  background-color: #e5f0fa;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-left: 70px;
+  padding-right: 90px;
+}
+
+.content {
+  max-width: 50%;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.subheading {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.cta-button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #2563eb;
+}
+
+.map-container {
+  max-width: 30%;
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
