@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./InputForm.css";
+import BusResults from "../Results/Results";
 
 const InputForm = () => {
   const [file, setFile] = useState(null);
@@ -36,26 +37,34 @@ const InputForm = () => {
     setLoading(true);
 
     const formData = new FormData();
-    formData.append("file", file);
-    formData.append("number_of_buses", numberOfBuses);
-    formData.append("time_window", timeWindow);
+    formData.append("csv_file", file);
+
+    console.log("Uploading file:", file.name);
+    console.log("FormData contains:", formData.get("file"));
 
     try {
+      console.log("Uploading file:", file.name);
+
       const response = await fetch(
         "https://bus-route-optimization-rsvx.onrender.com/optimize",
         {
           method: "POST",
           body: formData,
+          mode: "cors",
+          credentials: "omit",
         }
       );
 
       if (!response.ok) {
-        throw new Error("Failed to upload file");
+        const errorText = await response.text();
+        throw new Error(`Failed to upload file: ${errorText}`);
       }
 
       const data = await response.json();
+      console.log("API Response:", data);
       setResult(data);
     } catch (error) {
+      console.error("Upload Error:", error);
       setError(error.message);
     } finally {
       setLoading(false);
@@ -126,8 +135,8 @@ const InputForm = () => {
 
       {result && (
         <div className="result-section">
-          <h2>Optimization Results</h2>
-          <pre>{JSON.stringify(result, null, 2)}</pre>
+          <BusResults data={result} />
+          {/*<pre>{JSON.stringify(result, null, 2)}</pre>*/}
         </div>
       )}
     </div>

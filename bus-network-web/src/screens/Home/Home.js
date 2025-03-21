@@ -11,9 +11,7 @@ const HeroSection = () => {
   return (
     <div className="h-container">
       <div className="content">
-        <h1 className="heading">
-          Optimize Your Bus Routes with AI-Powered Solutions
-        </h1>
+        <h1 className="heading">Optimize Your Bus Routes with our model.</h1>
         <p className="subheading">
           Upload your dataset and get intelligent route optimization suggestions
           in minutes. Save time, reduce costs, and improve efficiency.

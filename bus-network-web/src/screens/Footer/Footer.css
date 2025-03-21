@@ -9,7 +9,7 @@
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   flex-wrap: wrap; /* Ensures the layout is responsive */
 }
 
@@ -19,7 +19,7 @@
   font-weight: 700;
   align-items: center;
   display: flex;
-  font-size: 50px;
+  font-size: 25px;
 }
 
 .f-logo {

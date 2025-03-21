@@ -6,7 +6,7 @@ const HowItWorks = () => {
   return (
     <section id="howitworks" className="ai-prediction-section">
       <div className="container">
-        <h2 className="section-heading">How Our Predictive Model Works</h2>
+        <h2 className="section-heading">How Our Bus Optimizer Works!</h2>
         <div className="steps-container">
           {/* Step 1 */}
           <div className="step-card">
