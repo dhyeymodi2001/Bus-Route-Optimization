@@ -4,8 +4,10 @@ from ortools.linear_solver import pywraplp
 import io
 import logging
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 def read_bus_data_from_csv(csv_data):
     """Reads bus scheduling data from CSV data (string)."""

@@ -1,3 +1,4 @@
 Flask
 ortools
+flask_cors
 gunicorn
