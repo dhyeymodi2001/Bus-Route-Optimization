@@ -181,3 +181,23 @@
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
+/* Solver selection styling */
+.solver-selection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.solver-selection label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: #2d3748;
+}
+
+.solver-selection input[type="radio"] {
+  margin: 0;
+}

@@ -7,6 +7,7 @@ const InputForm = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
+  const [solverType, setSolverType] = useState("lp"); // Default to LP
 
   const handleFileChange = (event) => {
     const uploadedFile = event.target.files[0];
@@ -39,19 +40,22 @@ const InputForm = () => {
 
     console.log("Uploading file:", file.name);
     console.log("FormData contains:", formData.get("file"));
+    console.log("Solver type:", solverType);
+
+    let apiUrl = "https://bus-route-optimization-rsvx.onrender.com/optimize"; // Default to LP URL
+    if (solverType === "cp") {
+      apiUrl = "https://bus-route-optimization-1-ffhu.onrender.com/optimize"; // CP URL
+    }
 
     try {
       console.log("Uploading file:", file.name);
 
-      const response = await fetch(
-        "https://bus-route-optimization-rsvx.onrender.com/optimize",
-        {
-          method: "POST",
-          body: formData,
-          mode: "cors",
-          credentials: "omit",
-        }
-      );
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        body: formData,
+        mode: "cors",
+        credentials: "omit",
+      });
 
       if (!response.ok) {
         const errorText = await response.text();
@@ -98,7 +102,26 @@ const InputForm = () => {
           {error && <p className="error-message">{error}</p>}
         </div>
 
-        <div className="form-section"></div>
+        <div className="solver-selection">
+          <label>
+            <input
+              type="radio"
+              value="lp"
+              checked={solverType === "lp"}
+              onChange={() => setSolverType("lp")}
+            />
+            Linear Programming (LP)
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="cp"
+              checked={solverType === "cp"}
+              onChange={() => setSolverType("cp")}
+            />
+            Constraint Programming (CP)
+          </label>
+        </div>
 
         <button
           className="upload-button"
@@ -112,7 +135,6 @@ const InputForm = () => {
       {result && (
         <div className="result-section">
           <BusResults data={result} />
-          {/*<pre>{JSON.stringify(result, null, 2)}</pre>*/}
         </div>
       )}
     </div>

@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import "./Footer.css";
 import busLogo from "../../images/bus_icon.png";
+import research_paper from "../../data/Modeling and Analysis of Bus Scheduling Systems of Urban Public Bus Transport.pdf";
 
 const Footer = () => {
   return (
@@ -72,6 +73,15 @@ const Footer = () => {
                 className="footer-link"
               >
                 Medium Article
+              </a>
+            </li>
+            <li>
+              <a
+                href={research_paper} // Replace with the actual file path
+                className="footer-link"
+                download="research-paper.pdf" // Specify the desired filename for download
+              >
+                Research Paper
               </a>
             </li>
           </ul>
