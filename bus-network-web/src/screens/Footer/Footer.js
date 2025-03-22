@@ -37,8 +37,8 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="#predict-price" className="footer-link">
-                Predict Now
+              <a href="#optimize-now" className="footer-link">
+                Optimize Now
               </a>
             </li>
             <li>
@@ -60,7 +60,7 @@ const Footer = () => {
           <ul className="footer-link-list">
             <li>
               <a
-                href="https://github.com/dhyeymodi2001/House-Price-Prediction"
+                href="https://github.com/dhyeymodi2001/Bus-Route-Optimization"
                 className="footer-link"
               >
                 Documentation

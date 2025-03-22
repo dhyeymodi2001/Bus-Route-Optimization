@@ -10,6 +10,9 @@
   padding-left: 70px;
   padding-right: 90px;
 }
+.button-container {
+  display: flex;
+}
 
 .content {
   max-width: 50%;
@@ -37,6 +40,7 @@
   cursor: pointer;
   border: none;
   transition: background-color 0.3s;
+  margin-right: 15px;
 }
 
 .cta-button:hover {

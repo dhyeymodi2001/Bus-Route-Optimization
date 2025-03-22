@@ -5,8 +5,6 @@ import BusResults from "../Results/Results";
 const InputForm = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
-  const [numberOfBuses, setNumberOfBuses] = useState("");
-  const [timeWindow, setTimeWindow] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
 
@@ -72,7 +70,7 @@ const InputForm = () => {
   };
 
   return (
-    <div className="upload-container">
+    <div className="upload-container" id="optimize-now">
       <h1 className="upload-title">Upload Your Route Data</h1>
       <p className="upload-description">
         Upload your CSV file containing route information and additional
@@ -100,29 +98,7 @@ const InputForm = () => {
           {error && <p className="error-message">{error}</p>}
         </div>
 
-        <div className="form-section">
-          <div className="input-group">
-            <label htmlFor="number-of-buses">Number of Buses</label>
-            <input
-              type="number"
-              id="number-of-buses"
-              value={numberOfBuses}
-              onChange={(e) => setNumberOfBuses(e.target.value)}
-              placeholder="Enter number of buses"
-            />
-          </div>
-
-          <div className="input-group">
-            <label htmlFor="time-window">Time Window</label>
-            <input
-              type="text"
-              id="time-window"
-              value={timeWindow}
-              onChange={(e) => setTimeWindow(e.target.value)}
-              placeholder="Start Time - End Time"
-            />
-          </div>
-        </div>
+        <div className="form-section"></div>
 
         <button
           className="upload-button"

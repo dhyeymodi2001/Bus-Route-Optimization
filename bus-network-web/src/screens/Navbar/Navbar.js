@@ -40,7 +40,7 @@ const Navbar = () => {
               <a href="#howitworks">How It Works?</a>
             </li>
             <li>
-              <a href="https://github.com/dhyeymodi2001/House-Price-Prediction">
+              <a href="https://github.com/dhyeymodi2001/Bus-Route-Optimization">
                 Source Code
               </a>
             </li>
@@ -74,7 +74,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="https://github.com/dhyeymodi2001/House-Price-Prediction"
+                href="https://github.com/dhyeymodi2001/Bus-Route-Optimization"
                 onClick={handleDrawerToggle}
               >
                 Source Code
