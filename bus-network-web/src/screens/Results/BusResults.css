@@ -31,6 +31,13 @@
   gap: 20px;
 }
 
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr; /* Stack elements in one column on mobile */
+    gap: 15px;
+  }
+}
+
 .details-container,
 .existing-table {
   display: flex;
@@ -71,9 +78,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  background-color: transparent; /* Remove background from parent */
-  padding: 0; /* Remove padding from parent */
-  box-shadow: none; /* Remove box shadow from parent */
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .stats-container {
+    grid-template-columns: 1fr; /* Stack the stats vertically on mobile */
+  }
 }
 
 .stat-card {
@@ -165,4 +178,52 @@
 .row-odd:hover {
   background-color: #f1f1f1;
   cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .bus-results-container {
+    padding: 20px; /* Less padding on mobile */
+  }
+
+  .r-heading {
+    font-size: 1.5rem; /* Smaller title on mobile */
+  }
+
+  .r-sub-heading {
+    font-size: 0.9rem;
+  }
+
+  .map-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .map-placeholder {
+    height: 200px; /* Adjust map size on mobile */
+    width: 200px;
+  }
+
+  .details-container,
+  .existing-table {
+    padding: 15px; /* Less padding for smaller screens */
+  }
+
+  .results-table {
+    font-size: 0.8rem; /* Smaller table text on mobile */
+  }
+
+  .stat-card {
+    padding: 15px; /* Less padding for smaller cards */
+  }
+
+  .stat-label {
+    font-size: 0.9rem; /* Adjust font size of labels */
+  }
+
+  .stat-value {
+    font-size: 1rem; /* Adjust font size of values */
+  }
 }
